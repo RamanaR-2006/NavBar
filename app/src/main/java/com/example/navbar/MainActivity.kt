@@ -1,5 +1,6 @@
 package com.example.navbar
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -47,29 +48,37 @@ class MainActivity : AppCompatActivity() {
         bottomNav.setNavigationItemSelectedListener  {
             when (it.itemId) {
                 R.id.home -> {
-                    Toast.makeText(this,"You have selected home",Toast.LENGTH_SHORT)
+                    Toast.makeText(this,"You have selected home",Toast.LENGTH_SHORT).show()
                     loadFragment(HomeFragment())
+                    selectMenuItem(it)
                     true
                 }
                 R.id.search -> {
-                    Toast.makeText(this,"You have selected search",Toast.LENGTH_SHORT)
+                    Toast.makeText(this,"You have selected search",Toast.LENGTH_SHORT).show()
                     loadFragment(SearchFragment())
+                    selectMenuItem(it)
                     true
                 }
                 R.id.favorite -> {
-                    Toast.makeText(this,"You have selected favorite",Toast.LENGTH_SHORT)
+                    Toast.makeText(this,"You have selected favorite",Toast.LENGTH_SHORT).show()
                     loadFragment(FavoritesFragment())
+                    selectMenuItem(it)
                     true
                 }
                 R.id.profile -> {
-                    Toast.makeText(this,"You have selected profile",Toast.LENGTH_SHORT)
+                    Toast.makeText(this,"You have selected profile",Toast.LENGTH_SHORT).show()
                     loadFragment(ProfileFragment())
+                    selectMenuItem(it)
                     true
                 }
-                else -> {true}
+                else -> {false}
             }
         }
     }
+    private fun selectMenuItem(menuItem: MenuItem) {
+        bottomNav.menu.setGroupCheckable(0, true, true)
+        menuItem.isChecked = true}
+
     private  fun loadFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container,fragment)
