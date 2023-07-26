@@ -51,24 +51,28 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this,"You have selected home",Toast.LENGTH_SHORT).show()
                     loadFragment(HomeFragment())
                     selectMenuItem(it)
+                    drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
                 R.id.search -> {
                     Toast.makeText(this,"You have selected search",Toast.LENGTH_SHORT).show()
                     loadFragment(SearchFragment())
                     selectMenuItem(it)
+                    drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
                 R.id.favorite -> {
                     Toast.makeText(this,"You have selected favorite",Toast.LENGTH_SHORT).show()
                     loadFragment(FavoritesFragment())
                     selectMenuItem(it)
+                    drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
                 R.id.profile -> {
                     Toast.makeText(this,"You have selected profile",Toast.LENGTH_SHORT).show()
                     loadFragment(ProfileFragment())
                     selectMenuItem(it)
+                    drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
                 else -> {false}
