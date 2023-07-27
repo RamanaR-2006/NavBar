@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     tools:ignore="HardcodedText"
+    android:translationZ="-270dp"
     >
 
 
@@ -19,7 +20,8 @@
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:elevation="@dimen/fragment_elevation"
+            android:translationZ="270dp"
             >
             <Button
                 android:id="@+id/showDrawerButton"

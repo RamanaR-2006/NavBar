@@ -8,6 +8,9 @@ android {
     namespace 'com.example.navbar'
     compileSdk 33
 
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.navbar"
